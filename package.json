@@ -1,0 +1,18 @@
+{
+  "name": "vanphubinh-com-vn",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.15.8",
+    "@astrojs/check": "^0.9.3",
+    "typescript": "^5.6.2"
+  },
+  "packageManager": "pnpm@8.15.1+sha512.831cf4c5f8b8374af71521d4d153db49d7086de615c2af7cb5e9d7eb8ba630ddac46fea495d643e552ef2e68a3aa99a3e5e9fbee8696702967504df5c59cb273"
+}
