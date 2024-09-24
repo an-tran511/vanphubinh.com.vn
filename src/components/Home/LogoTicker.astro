@@ -1,0 +1,124 @@
+---
+import Image from 'astro/components/Image.astro'
+import lothamilk from '../../assets/lothamilk.png'
+import laiphu from '../../assets/lai-phu.png'
+import vinhhao from '../../assets/vinh-hao.png'
+import yensaokhanhhoa from '../../assets/yen-sao-khanh-hoa.png'
+import hitech from '../../assets/hitech.png'
+import starkombucha from '../../assets/starkombucha.png'
+import wanna from '../../assets/wanna.png'
+---
+
+<div
+  class='bg-[radial-gradient(ellipse_200%_100%_at_top_left,_var(--tw-gradient-stops))] from-[#dbeafe] to-white pt-28'
+>
+  <div class='container text-md font-bold text-[#010D3E] tracking-tight mb-6'>
+    <p class='text-md text-[#001E61]/70 uppercase font-semibold tracking-wider'>
+      Đối tác
+    </p>
+  </div>
+
+  <div
+    class='w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent,black,transparent)]'
+  >
+    <ul
+      class='flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll'
+    >
+      <li>
+        <Image src={lothamilk} alt='Lothamilk Logo' class='logo-ticker' />
+      </li>
+      <li>
+        <Image
+          src={wanna}
+          alt='Wanna Logo'
+          class='logo-ticker md:logo-ticker-md'
+        />
+      </li>
+      <li>
+        <Image
+          src={hitech}
+          alt='Hitech Logo'
+          class='logo-ticker md:logo-ticker-md'
+        />
+      </li>
+      <li>
+        <Image
+          src={vinhhao}
+          alt='Vinh Hao Logo'
+          class='logo-ticker md:logo-ticker-md'
+        />
+      </li>
+      <li>
+        <Image
+          src={yensaokhanhhoa}
+          alt='Yen Sao Khanh Hoa Logo'
+          class='logo-ticker md:logo-ticker-md'
+        />
+      </li>
+      <li>
+        <Image
+          src={laiphu}
+          alt='Lai Phu Logo'
+          class='logo-ticker md:logo-ticker-md'
+        />
+      </li>
+      <li>
+        <Image
+          src={starkombucha}
+          alt='Star Kombucha Logo'
+          class='logo-ticker md:logo-ticker-md'
+        />
+      </li>
+    </ul>
+    <ul
+      class='flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll'
+      aria-hidden='true'
+    >
+      <li>
+        <Image
+          src={lothamilk}
+          alt='Lothamilk Logo'
+          class='logo-ticker md:logo-ticker-md'
+        />
+      </li>
+      <li>
+        <Image
+          src={wanna}
+          alt='Wanna Logo'
+          class='logo-ticker md:logo-ticker-md'
+        />
+      </li>
+      <li>
+        <Image
+          src={hitech}
+          alt='Hitech Logo'
+          class='logo-ticker md:logo-ticker-md'
+        />
+      </li>
+      <li>
+        <Image
+          src={vinhhao}
+          alt='Vinh Hao Logo'
+          class='logo-ticker md:logo-ticker-md'
+        />
+      </li>
+      <li>
+        <Image
+          src={yensaokhanhhoa}
+          alt='Yen sao Khanh Hoa Logo'
+          class='logo-ticker md:logo-ticker-md'
+        />
+      </li>
+      <li>
+        <Image src={laiphu} alt='Lai Phu Logo' class='logo-ticker' />
+      </li>
+      <li>
+        <Image
+          src={starkombucha}
+          alt='Star Kombucha Logo'
+          class='logo-ticker md:logo-ticker-md'
+        />
+      </li>
+    </ul>
+  </div>
+</div>

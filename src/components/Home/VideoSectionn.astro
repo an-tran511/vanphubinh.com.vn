@@ -1,0 +1,64 @@
+---
+import { YouTube } from '@astro-community/astro-embed-youtube'
+---
+
+<div class='container mt-16 lg:mt-48'>
+  <div
+    class='grid grid-cols-1 lg:grid-cols-2 md:gap-x-16 gap-y-16 lg:gap-y-0 items-center'
+  >
+    <div class='relative mb-8 md:mb-0 order-last lg:order-first'>
+      <div class='relative z-10'>
+        <YouTube id='HFM2Av2pkVk' posterQuality='max' class='rounded-xl' />
+      </div>
+      <svg
+        class='absolute -top-10 -left-10 w-20 h-20 text-[#F3C241] z-0'
+        viewBox='0 0 24 24'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          d='M12 2L22 22H2L12 2Z'
+          stroke='currentColor'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'></path>
+      </svg>
+      <svg
+        class='absolute -bottom-10 -right-10 w-24 h-24 text-[#001E61] z-0'
+        viewBox='0 0 24 24'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <circle cx='12' cy='12' r='10' stroke='currentColor' stroke-width='2'
+        ></circle>
+      </svg>
+    </div>
+    <div class='h-full'>
+      <p
+        class='text-md text-[#001E61]/70 uppercase font-semibold tracking-wider'
+      >
+        Về chúng tôi
+      </p>
+      <h2
+        class='text-3xl md:text-4xl font-bold text-[#001E61] my-4 capitalize leading-normal'
+      >
+        Chất lượng hàng đầu
+        <br />
+        Khách hàng hài lòng
+      </h2>
+      <p class='text-lg my-4 leading-relaxed tracking-normal text-black/60'>
+        Vạn Phú Bình theo đuổi sự bền bỉ và đổi mới. Chúng tôi luôn nỗ lực không
+        ngừng, với mục tiêu vượt xa mọi kỳ vọng của khách hàng, mang đến sự hài
+        lòng tuyệt đối trong từng sản phẩm và dịch vụ.
+      </p>
+      <div class='mt-8'>
+        <a
+          href='#'
+          class='rounded-full border-2 border-[#001E61] px-5 py-3 text-md font-semibold text-[#001E61] transition-colors hover:bg-[#001E61] hover:text-white'
+        >
+          Tìm hiểu thêm
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
