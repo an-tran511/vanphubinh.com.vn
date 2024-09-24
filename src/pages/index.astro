@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro'
-
 import Header from '../components/Home/Header.astro'
 import Hero from '../components/Home/Hero.astro'
 import Footer from '../components/Footer.astro'
@@ -8,6 +7,7 @@ import LogoTicker from '../components/Home/LogoTicker.astro'
 import CallToProducts from '../components/Home/CallToProducts.astro'
 import VideoSection from '../components/Home/VideoSectionn.astro'
 import Stats from '../components/Home/Stats.astro'
+import CallToContact from '../components/Home/CallToContact.astro'
 ---
 
 <Layout title='Welcome to Astro.'>
@@ -15,7 +15,24 @@ import Stats from '../components/Home/Stats.astro'
   <Hero />
   <LogoTicker />
   <CallToProducts />
-  <VideoSection />
-  <Stats />
-  <Footer />
+  <div
+    class='inset-0 bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]'
+  >
+    <VideoSection />
+    <Stats />
+    <CallToContact />
+    <Footer />
+  </div>
 </Layout>
+
+<style>
+  .grid {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, #80808012 1px, transparent 1px),
+      linear-gradient(to bottom, #80808012 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+</style>
