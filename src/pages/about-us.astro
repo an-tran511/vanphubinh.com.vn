@@ -6,42 +6,31 @@ import aboutUs1 from '../assets/about-us-1.jpg'
 import aboutUs2 from '../assets/about-us-2.jpg'
 import aboutUs3 from '../assets/about-us-3.jpg'
 import aboutUs4 from '../assets/about-us-4.jpg'
-import aboutUsTeam from '../assets/about-us-team.jpg'
 import meetingFounder from '../assets/meeting-founder.png'
 import vision from '../assets/vision.jpg'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
-import Stats from '../components/Home/Stats.astro'
 import CallToContact from '../components/Home/CallToContact.astro'
 ---
 
 <Layout title='About Us'>
   <Header />
 
-  <!-- <div class='absolute inset-0 overflow-hidden'>
-    <svg class='w-full h-full' xmlns='http://www.w3.org/2000/svg'>
-      <circle cx='10%' cy='20%' r='50' fill='#F3C241' opacity='0.2'></circle>
-      <circle cx='80%' cy='10%' r='70' fill='#F3C241' opacity='0.15'></circle>
-      <circle cx='50%' cy='50%' r='100' fill='#F3C241' opacity='0.1'></circle>
-      <circle cx='85%' cy='85%' r='60' fill='#F3C241' opacity='0.2'></circle>
-      <circle cx='40%' cy='90%' r='40' fill='#F3C241' opacity='0.15'></circle>
-    </svg>
-  </div> -->
   <div
-    class='container font-bold text-[#010D3E] tracking-tight pt-12 md:pt-16 lg:pt-24 flex flex-col md:gap-12 gap-6'
+    class='container font-medium text-[#010D3E] tracking-tight pt-12 md:pt-16 lg:pt-24 flex flex-col md:gap-12 gap-6'
   >
     <p
-      class='text-sm font-normal text-[#001E61]/70 my-2 uppercase tracking-wider'
+      class='text-sm font-medium text-[#001E61]/70 my-2 uppercase tracking-wider'
     >
       Về chúng tôi
     </p>
     <p
-      class='lg:text-5xl md:text-4xl text-2xl text-[#001E61] font-normal max-w-3xl capitalize'
+      class='lg:text-5xl md:text-4xl text-2xl text-[#001E61] font-medium max-w-3xl capitalize'
     >
       Đối tác tin cậy trong lĩnh vực <br />bao bì nhựa
     </p>
     <div class='relative lg:self-end'>
-      <p class='text-lg text-[#001E61]/80 max-w-lg font-normal self-end'>
+      <p class='text-lg text-[#001E61]/80 max-w-lg font-medium self-end'>
         Chúng tôi không ngừng đổi mới và cải tiến để đảm bảo mỗi sản phẩm đều
         đạt chuẩn chất lượng cao nhất, đáp ứng mọi nhu cầu đóng gói của doanh
         nghiệp
@@ -51,35 +40,39 @@ import CallToContact from '../components/Home/CallToContact.astro'
   <div class='container my-12'>
     <div class='grid grid-cols-2 md:grid-cols-4 gap-4'>
       <Image
-        src={aboutUs1}
+        src={aboutUs4}
         alt='About Us Image 1'
-        class='w-full h-auto rounded-xl'
+        class='w-full h-auto rounded-2xl'
       />
       <Image
-        src={aboutUs4}
-        alt='Meeting with Founder'
-        class='w-full h-auto rounded-xl'
+        src={aboutUs1}
+        alt='About Us Image 2'
+        class='w-full h-auto rounded-2xl'
+      />
+      <Image
+        src={aboutUs3}
+        alt='About Us Image 3'
+        class='w-full h-auto rounded-2xl'
       />
       <Image
         src={aboutUs2}
-        alt='About Us Image 2'
-        class='w-full h-auto rounded-xl'
+        alt='About Us Image 4'
+        class='w-full h-auto rounded-2xl'
       />
-      <Image src={aboutUs3} alt='Our Team' class='w-full h-auto rounded-xl' />
     </div>
   </div>
 
-  <div class='container my-8 md:my-16'>
+  <div class='container mt-12 md:mt-16 lg:mt-24'>
     <hr class='border-t-2 border-[#001E61]/20' />
-    <p class='text-sm font-normal text-[#001E61]/70 my-2 uppercase'>
-      Câu chuyện sáng lập
-    </p>
   </div>
 
   <section
-    class='container font-bold text-[#010D3E] tracking-tight flex flex-col md:gap-12 gap-6'
+    class='container font-medium text-[#010D3E] tracking-tight flex flex-col md:gap-12 gap-8'
   >
-    <h2 class='text-xl md:text-5xl font-normal text-[#001E61] mb-8 capitalize'>
+    <p class='text-sm font-medium text-[#001E61]/70 my-2 uppercase'>
+      Câu chuyện sáng lập
+    </p>
+    <h2 class='text-xl md:text-5xl font-medium text-[#001E61] mb-8 capitalize'>
       Xây dựng bằng niềm đam mê
     </h2>
     <div class='grid grid-cols-1 md:grid-cols-2 gap-8'>
@@ -91,7 +84,7 @@ import CallToContact from '../components/Home/CallToContact.astro'
         />
       </div>
       <div class='place-items-center place-content-center'>
-        <p class='text-sm md:text-lg font-normal text-[#001E61]/80'>
+        <p class='text-sm md:text-lg font-medium text-[#001E61]/80'>
           Khởi đầu sự nghiệp trong ngành in ấn quảng cáo, ông Đức Bình sớm nhận
           ra tầm quan trọng của bao bì đẹp trong việc đưa sản phẩm đến tay người
           tiêu dùng. Nhận thức này đã thúc đẩy ông đào sâu vào lĩnh vực in ấn và
@@ -100,80 +93,75 @@ import CallToContact from '../components/Home/CallToContact.astro'
           những lớp "áo" chất lượng cho hàng triệu sản phẩm, góp phần nâng tầm
           giá trị của chúng.
         </p>
-        <br />
-        <!-- <p class='text-sm md:text-lg text-[#001E61]/80'>
-          Trải qua nhiều thử thách và nỗ lực không ngừng, công ty đã phát triển
-          từ một xưởng sản xuất nhỏ thành một trong những nhà cung cấp bao bì
-          hàng đầu tại Việt Nam, luôn giữ vững tinh thần đổi mới và cam kết chất
-          lượng.
-        </p> -->
       </div>
     </div>
   </section>
 
-  <div class='container my-8 md:my-16'>
+  <div class='container mt-12 md:mt-16 lg:mt-24'>
     <hr class='border-t-2 border-[#001E61]/20' />
-    <p class='text-sm font-normal text-[#001E61]/70 my-2 uppercase'>
-      Tầm nhìn và Giá Trị cốt lõi
-    </p>
   </div>
 
-  <section class='container flex flex-col gap-24'>
-    <div class='mb-16 flex flex-col gap-8'>
+  <section class='container flex flex-col md:gap-16 gap-8'>
+    <div class='lg:mb-16 flex flex-col gap-8'>
+      <p class='text-sm font-medium text-[#001E61]/70 my-2 uppercase'>
+        Tầm nhìn và Giá Trị cốt lõi
+      </p>
       <h2
-        class='text-xl text-left md:text-5xl font-normal text-[#001E61] capitalize'
+        class='text-xl text-left md:text-5xl font-medium text-[#001E61] capitalize'
       >
         Tầm nhìn
       </h2>
-      <div class=''>
-        <p class='text-left text-sm md:text-xl text-[#001E61]/80'>
-          "Trở thành đối tác tin cậy hàng đầu trong lĩnh vực bao bì, nơi mà sự
-          sáng tạo và chất lượng hội tụ để nâng tầm giá trị thương hiệu của
-          khách hàng."
-        </p>
-      </div>
+      <p class='text-left text-sm md:text-lg text-[#001E61]/80'>
+        Trở thành đối tác tin cậy hàng đầu trong lĩnh vực bao bì, nơi mà sự sáng
+        tạo và chất lượng hội tụ để nâng tầm giá trị thương hiệu của khách hàng
+        một cách bền vững
+      </p>
       <Image
         src={vision}
         alt='Our Vision'
-        class='w-full h-64 md:h-[450px] rounded-xl object-cover'
+        class='w-full h-64 md:h-[450px] rounded-2xl object-cover'
       />
     </div>
 
-    <div class='text-left'>
+    <div class='flex flex-col gap-8'>
       <h2
-        class='text-xl md:text-5xl font-normal text-[#001E61] mb-8 capitalize'
+        class='text-xl md:text-5xl font-medium text-[#001E61] mb-8 capitalize'
       >
         Giá trị cốt lõi
       </h2>
-      <div class='grid grid-cols-1 lg:grid-cols-3 gap-16'>
+      <p class='text-left text-sm md:text-xl text-[#001E61]/80'>
+        Những giá trị cốt lõi định hình nên bản sắc và hướng đi của Vạn Phú
+        Bình:
+      </p>
+      <div class='grid grid-cols-1 md:grid-cols-3 gap-16'>
         <div class='flex flex-col justify-center items-center space-y-4 h-full'>
           <img
-            class='h-auto rounded-lg'
+            class='h-auto rounded-2xl'
             src='https://illustrations.popsy.co/white/team-idea.svg'
             alt=''
           />
-          <h2 class='text-3xl text-semibold text-[#001E61]/80 text-center'>
+          <h2 class='text-2xl text-semibold text-[#001E61]/80 text-center'>
             chính trực và uy tín
           </h2>
         </div>
 
         <div class='flex flex-col justify-center items-center space-y-4 h-full'>
           <img
-            class='h-auto rounded-lg'
+            class='h-auto rounded-2xl'
             src='https://illustrations.popsy.co/white/celebrating-business-success.svg'
             alt=''
           />
-          <h2 class='text-3xl text-semibold text-[#001E61]/80 text-center'>
+          <h2 class='text-2xl text-semibold text-[#001E61]/80 text-center'>
             đổi mới và cải tiến
           </h2>
         </div>
         <div class='flex flex-col justify-center items-center space-y-4 h-full'>
           <img
-            class='h-auto rounded-lg'
+            class='h-auto rounded-2xl'
             src='https://illustrations.popsy.co/white/man-riding-a-rocket.svg'
             alt=''
           />
-          <h2 class='text-3xl text-semibold text-[#001E61]/80 text-center'>
+          <h2 class='text-2xl text-semibold text-[#001E61]/80 text-center'>
             phản ứng nhanh
           </h2>
         </div>
