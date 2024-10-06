@@ -1,0 +1,182 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Header from '../../components/Header.astro'
+import Footer from '../../components/Footer.astro'
+import Image from 'astro/components/Image.astro'
+// Mock product data (replace with actual data fetching logic)
+const products = [
+  {
+    id: 1,
+    name: 'Nhãn co',
+    category: 'Màng co',
+    description:
+      'Màng co nhiệt bọc sản phẩm, nâng cao thẩm mỹ và bảo vệ hiệu quả',
+    image: 'https://hinhanh.vanphubinh.vn/shrink-sleeve-1.jpg'
+  }
+]
+
+const categories = ['Tất cả']
+
+function normalizeString(str: string): string {
+  var from =
+      'àáãảạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệđùúủũụưừứửữựòóỏõọôồốổỗộơờớởỡợìíỉĩịäëïîöüûñçýỳỹỵỷ',
+    to =
+      'aaaaaaaaaaaaaaaaaeeeeeeeeeeeduuuuuuuuuuuoooooooooooooooooiiiiiaeiiouuncyyyyy'
+  for (var i = 0, l = from.length; i < l; i++) {
+    str = str.replace(RegExp(from[i], 'gi'), to[i])
+  }
+  str = str
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\-]/g, '-')
+    .replace(/-+/g, '-')
+  return str
+}
+---
+
+<Layout title='Sản phẩm | Vạn Phú Bình'>
+  <Header />
+
+  <div class='relative w-full p-16 flex items-center justify-center'>
+    <div
+      class='absolute inset-0 h-full w-full bg-white bg-[radial-gradient(#001E61_0.5px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_5%,transparent_100%)]'
+    >
+    </div>
+    <h1 class='text-4xl font-normal text-[#001E61] z-10 relative'>Sản phẩm</h1>
+  </div>
+
+  <main class='container flex flex-col lg:flex-row gap-8 lg:gap-12 min-h-svh'>
+    <!-- Filters and Search -->
+    <div class='lg:w-1/4'>
+      <div class=''>
+        <div
+          class='border-solid lg:min-h-96 p-6 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]'
+        >
+          <h2 class='text-xl font-semibold mb-4 text-[#001E61]'>Bộ lọc</h2>
+          <div class='mb-4 relative'>
+            <input
+              type='text'
+              placeholder='Tìm kiếm sản phẩm...'
+              class='w-full p-2 border rounded'
+              id='search-input'
+            />
+          </div>
+          <div>
+            <h3 class='font-semibold mb-2 text-[#001E61]'>Danh mục</h3>
+            <ul class='flex flex-col gap-8 lg:gap-12'>
+              {
+                categories.map((category) => (
+                  <li>
+                    <label class='flex items-center'>
+                      <input
+                        type='checkbox'
+                        class='mr-2 category-filter'
+                        value={category}
+                      />
+                      <span class='text-[#001E61]'>{category}</span>
+                    </label>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <section class='lg:w-3/4'>
+      <div
+        class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12'
+      >
+        {
+          products.map((product) => (
+            <a
+              href='#'
+              class='bg-white p-4 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)] flex flex-col justify-between gap-2 transition-all duration-300 hover:shadow-[0_5px_15px_rgb(0,0,0,0.3)] hover:transform hover:scale-105 group'
+              data-category={product.category}
+            >
+              <div>
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={50}
+                  height={50}
+                  class='w-full h-auto border rounded-xl'
+                />
+              </div>
+              <h3 class='text-lg font-semibold text-[#001E61] mt-2'>
+                {product.name}
+              </h3>
+              <p class='text-sm text-[#001E61]'>{product.description}</p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<script is:inline>
+  const searchInput = document.getElementById('search-input')
+  const categoryFilters = document.querySelectorAll('.category-filter')
+  const productItems = document.querySelectorAll('.product-item')
+
+  function normalizeString(str) {
+    var from =
+        'àáãảạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệđùúủũụưừứửữựòóỏõọôồốổỗộơờớởỡợìíỉĩịäëïîöüûñçýỳỹỵỷ',
+      to =
+        'aaaaaaaaaaaaaaaaaeeeeeeeeeeeduuuuuuuuuuuoooooooooooooooooiiiiiaeiiouuncyyyyy'
+    for (var i = 0, l = from.length; i < l; i++) {
+      str = str.replace(RegExp(from[i], 'gi'), to[i])
+    }
+    str = str
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9\-]/g, '-')
+      .replace(/-+/g, '-')
+    return str
+  }
+
+  function getSelectedCategories() {
+    return Array.from(categoryFilters)
+      .filter((filter) => filter instanceof HTMLInputElement && filter.checked)
+      .map((filter) => filter.value)
+  }
+  function isProductVisible(item, searchTerm, selectedCategories) {
+    const productName = normalizeString(
+      item.querySelector('h3')?.textContent ?? ''
+    )
+    const productCategory = item.dataset.category
+
+    const matchesSearch = productName.includes(searchTerm)
+    const matchesCategory =
+      selectedCategories.length === 0 ||
+      selectedCategories.includes('Tất cả') ||
+      selectedCategories.includes(productCategory ?? '')
+
+    return matchesSearch && matchesCategory
+  }
+
+  function filterProducts() {
+    const searchTerm = normalizeString(searchInput?.value ?? '')
+    const selectedCategories = getSelectedCategories()
+
+    productItems.forEach((item) => {
+      item.style.display = isProductVisible(
+        item,
+        searchTerm,
+        selectedCategories
+      )
+        ? 'block'
+        : 'none'
+    })
+  }
+
+  searchInput?.addEventListener('input', filterProducts)
+  categoryFilters.forEach((filter) =>
+    filter.addEventListener('change', filterProducts)
+  )
+</script>
+<style></style>

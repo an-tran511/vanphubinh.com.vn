@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Header from '../../components/Header.astro'
+import Footer from '../../components/Footer.astro'
+import { Picture } from 'astro:assets'
+
+const nhanCo1 = 'https://hinhanh.vanphubinh.vn/shrink-sleeve-1.jpg'
+const nhanCo2 = 'https://hinhanh.vanphubinh.vn/shrink-sleeve-1.jpg'
+const nhanCo3 = 'https://hinhanh.vanphubinh.vn/shrink-sleeve-1.jpg'
+
+const images = [nhanCo1, nhanCo2, nhanCo3]
+---
+
+<Layout title='Nhãn Co - Vạn Phú Bình'>
+  <Header />
+  <div class='container my-12'>
+    <div class='grid grid-cols-1 md:grid-cols-2 gap-12'>
+      <!-- Image Gallery -->
+      <div class='flex flex-col gap-8 col-span-1'>
+        <div class='flex-1 flex items-center justify-center'>
+          <Picture
+            width={500}
+            height={1000}
+            src={images[0]}
+            alt='Nhãn Co chính'
+            class='rounded-xl h-auto w-full'
+            id='mainImage'
+          />
+        </div>
+        <div class='flex flex-row justify-between gap-8'>
+          {
+            images.map((img, index) => (
+              <Picture
+                width={200}
+                height={200}
+                src={img}
+                alt={`Nhãn Co ${index + 1}`}
+                class='w-auto rounded-xl cursor-pointer hover:opacity-75 transition-opacity'
+              />
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Product Information -->
+      <div class='col-span-2 p-8'>
+        <h1 class='text-3xl font-bold text-[#001E61] mb-8'>Nhãn Co</h1>
+
+        <h2 class='text-2xl font-semibold text-[#001E61] mb-4'>
+          Thông tin sản phẩm
+        </h2>
+        <p class='text-gray-700 mb-4'>
+          Nhãn co là một loại nhãn đặc biệt được thiết kế để co lại và ôm sát
+          vào sản phẩm khi được gia nhiệt. Sản phẩm này của Vạn Phú Bình mang
+          đến giải pháp đóng gói hiệu quả và thẩm mỹ cho nhiều loại sản phẩm
+          khác nhau. Nhãn co thường được làm từ các vật liệu như PVC, PET, hoặc
+          OPS, cho phép co giãn và bám chặt vào bề mặt sản phẩm, tạo nên một lớp
+          bảo vệ hoàn hảo và bắt mắt.
+        </p>
+
+        <h3 class='text-xl font-semibold text-[#001E61] mb-2'>Đặc điểm:</h3>
+        <ul class='list-disc list-inside text-gray-700 mb-4'>
+          <li>Co giãn tốt, ôm sát sản phẩm</li>
+          <li>In ấn chất lượng cao với nhiều màu sắc</li>
+          <li>Bảo vệ sản phẩm khỏi bụi, ẩm và tác động bên ngoài</li>
+          <li>Thích hợp cho nhiều loại hình dáng sản phẩm</li>
+          <li>Khả năng chống giả mạo và bảo vệ thương hiệu</li>
+        </ul>
+
+        <h3 class='text-xl font-semibold text-[#001E61] mb-2'>Ứng dụng:</h3>
+        <ul class='list-disc list-inside text-gray-700 mb-4'>
+          <li>Đóng gói chai lọ (nước giải khát, dược phẩm)</li>
+          <li>Bao bì thực phẩm và đồ uống</li>
+          <li>Nhãn mác cho sản phẩm mỹ phẩm và chăm sóc cá nhân</li>
+          <li>Đóng gói sản phẩm điện tử và công nghệ</li>
+          <li>Bao bì cho sản phẩm gia dụng và hóa chất</li>
+        </ul>
+
+        <a
+          href='#'
+          class='inline-block bg-[#F3C241] text-[#001E61] px-6 py-3 rounded-full text-lg font-medium transition-transform hover:scale-105 hover:shadow-lg'
+        >
+          Liên hệ đặt hàng
+        </a>
+      </div>
+    </div>
+  </div>
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const thumbnails = document.querySelectorAll('.grid-cols-3 img')
+    const mainImage = document.getElementById('mainImage')
+
+    thumbnails.forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        if (
+          mainImage instanceof HTMLImageElement &&
+          thumb instanceof HTMLImageElement
+        ) {
+          mainImage.src = thumb.src
+        }
+      })
+    })
+  })
+</script>
